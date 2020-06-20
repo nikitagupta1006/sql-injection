@@ -1,0 +1,29 @@
+<link rel="stylesheet" href="/css/home.css" type="text/css">
+<div class="flex-box">
+    <div class="sign-in">
+        <form action="/sign-in" method="POST">
+            <div>
+                <label for="email">Username</label>
+                <input type="text" name="email" id="email" required>
+            </div>
+            <div>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" id="password" required>
+            </div>
+            <input type="submit" value="SIGN IN" id="sign-in-button">
+        </form>
+    </div>
+
+</div>
+
+<% if(locals.result) { %>
+    <div class="flex-box">
+        <ul style="list-style: none;">
+            <% for(let i = 0; i < locals.result.length; i++) { %>
+                <li>
+                    <%= locals.result[i].name %>
+                </li>
+                <% } %>
+        </ul>
+    </div>
+    <% } %>
